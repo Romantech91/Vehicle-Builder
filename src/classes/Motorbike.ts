@@ -4,18 +4,18 @@ import Wheel from './Wheel.js';
 
 // TODO: The Motorbike class should extend the Vehicle class
 class Motorbike extends Vehicle {
-  vin: string;
+    vin: string;
     color: string;
     make: string;
     model: string;
     year: number;
     weight: number;
     topSpeed: number;
-    wheels: Wheel[]
+    wheels: Wheel[];
   // TODO: Declare properties of the Motorbike class
   // TODO: The properties should include vin, color, make, model, year, weight, top speed, and wheels
   // TODO: The types should be as follows: vin (string), color (string), make (string), model (string), year (number), weight (number), topSpeed (number), wheels (Wheel[])
-constructor(
+   constructor(
     vin: string,
     color: string,
     make: string,
@@ -23,7 +23,7 @@ constructor(
     year: number,
     weight: number,
     topSpeed: number,
-    wheels: Wheel[]
+    wheels: Wheel[] = [new Wheel(), new Wheel()]
   ) {
     super();
 
@@ -50,7 +50,7 @@ constructor(
     // TODO: The constructor should check if the wheels array has 2 elements and create 2 new default Wheel objects if it does not
 
   // TODO: Implement the wheelie method
-    // TODO: The method should log the message "Motorbike [make] [model] is doing a wheelie!"
+  // TODO: The method should log the message "Motorbike [make] [model] is doing a wheelie!"
 wheelie(): void {
     console.log(`Motorbike ${this.make} ${this.model} is doing a wheelie!`);
   }
@@ -67,6 +67,9 @@ wheelie(): void {
     console.log(`Make: ${this.make}`);
     console.log(`Model: ${this.model}`);
     console.log(`Year: ${this.year}`);
+    console.log(`Weight: ${this.weight} lbs`);
+    console.log(`Top Speed: ${this.topSpeed} mph`);
+    console.log(`Wheels: ${this.wheels[0].getDiameter}" ${this.wheels[0].getTireBrand}, ${this.wheels[1].getDiameter}" ${this.wheels[1].getTireBrand}`);
   }
 }
 
