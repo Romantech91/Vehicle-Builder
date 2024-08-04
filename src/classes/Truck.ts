@@ -63,7 +63,19 @@ constructor(
     // TODO: If it is, log that the vehicle is being towed
     // TODO: If it is not, log that the vehicle is too heavy to be towed
   }
-
+override printDetails(): void {
+    super.printDetails();
+    console.log(`VIN: ${this.vin}`);
+    console.log(`Color: ${this.color}`);
+    console.log(`Make: ${this.make}`);
+    console.log(`Model: ${this.model}`);
+    console.log(`Year: ${this.year}`);
+    console.log(`Weight: ${this.weight} lbs`);
+    console.log(`Top Speed: ${this.topSpeed} mph`);
+    console.log(`Towing Capacity: ${this.towingCapacity} lbs`);
+    console.log(`Wheels count: ${this.wheels.length}`);
+    console.log(`Wheels: ${this.wheels.map(wheel => `${wheel.getDiameter}" ${wheel.getTireBrand}`).join(', ')}`);
+  }
   // TODO: Override the printDetails method from the Vehicle class
     // TODO: The method should call the printDetails method of the parent class
     // TODO: The method should log the details of the Truck
