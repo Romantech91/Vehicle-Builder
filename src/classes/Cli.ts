@@ -431,10 +431,10 @@ class Cli {
           } else {
             console.log("Selected vehicle is not a motorbike.");
           }
-        } else if (answers.action === 'Select or create another vehicle') {
+        } if (answers.action === 'Select or create another vehicle') {
           this.startCli();
           return;
-        } else {
+        } else if (answers.action === 'Exit') {
           this.exit = true;
         }
         if (!this.exit) {
