@@ -429,6 +429,7 @@ class Cli {
           if (motorbike instanceof Motorbike) {
             const motorbike = this.vehicles.find((vehicle) => vehicle instanceof Motorbike);
             if (motorbike) {
+              console.log(`Motorbike ${motorbike.make} ${motorbike.model} is doing a wheelie!`);
           motorbike.wheelie();
           } else {
             console.log("Selected vehicle is not a motorbike.");
