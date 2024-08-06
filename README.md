@@ -1,132 +1,130 @@
-# 08 TypeScript and OOP: Vehicle Builder
+# Vehicle Builder CLI
 
-## Your Task
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Your task is to update an existing TypeScript command-line application that builds and uses cars to have additional options for motorbikes and trucks. The application prompts the user to create a new vehicle or select an existing vehicle. After going through the creation process or the selection process, the user is able to perform certain actions with the selected vehicle. The user is returned to the actions menu after each action until they decide to exit the application.
+## Description
 
-Because this application won't be deployed, you'll need to provide a link to a walkthrough video that demonstrates its functionality. You'll need to submit a link to the video **and** add it to the README of your project.
+A command-line interface (CLI) for building and managing different types of vehicles including cars, trucks, and motorbikes. This Cli also lets you perform actions and manage their attributes.
 
-Refer to the [video submission guide on the Full-Stack Blog](https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission-guide) for additional guidance on creating a video.
+## Table of Contents
 
-### User Story
+- [Installation](#installation)
+- [Usage](#usage)
+- [Video walk through](video-walk-through)
+- [Credits](#credits)
+- [Features](#features)
+- [Vehicle Classes](#vehicle-classes)
+  - [Vehicle](#vehicle)
+  - [Car](#car)
+  - [Truck](#truck)
+  - [Motorbike](#motorbike)
+- [How to Contribute](#how-to-contribute)
+- [Tests](#tests)
+- [License](#license)
+- [Questions](#questions)
 
-```md
-AS a developer
-I WANT to update an existing application to include additional vehicle types
-SO THAT I am able to comprehend and work with existing code bases.
-```
+## Installation
 
-## Acceptance Criteria
+node.js
+npm install
+npm run start
 
-```md
-GIVEN a command-line application that accepts user input
-WHEN I am prompted to create a new vehicle or existing vehicle
-THEN I can choose between the two options
-WHEN I am prompted to choose the vehicle type during creation
-THEN I can choose between car, truck, and motorbike
-WHEN I am prompted for details about the vehicle
-THEN I can enter the vehicle information
-WHEN I have entered all the vehicle information
-THEN I can use the created vehicle
-WHEN I select an existing vehicle
-THEN I can use the selected existing vehicle
-WHEN I have created a new vehicle or selected an existing vehicle
-THEN I can perform actions with that vehicle
-WHEN I perform an action with a vehicle
-THEN I see the result of the action in the command-line
-WHEN I complete the process of performing an action
-THEN I can perform additional actions until I choose to exit
-```
+## Usage
 
-## Additional Requirements
+To run this CLI, follow these steps:
 
-This Challenge combines many of the skills covered so far. In addition to the user story and acceptance criteria, we've provided some guidelines to help you get started.
+1. Run the scripts using npm i.
 
-Because this Challenge requires a video submission, refer to the [Full-Stack Blog video submission guide](https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission-guide) for guidance on creating and sharing a video.
+   - npm i
 
-Your application should use [Inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user. The application will be invoked by using the following command:
+2. Starting CLI:
 
-```bash
-npm start
-```
+   - npm run start
 
-## 📝 Notes
+3. You will be prompted to either create a new vehicle or select an existing one to perform actions on.
 
-Moving forward, you will be provided with the `tsconfig.json` file. This is to reflect the fact that most companies assign you projects with these configurations already set up.
+## Video walk through
 
-## Helpful TypeScript Resources
+For a visual walk through on how to use the application, click on to watch the video.
 
-* [Classes](https://www.typescriptlang.org/docs/handbook/2/classes.html)
+## Credits
 
-* [Object types](https://www.typescriptlang.org/docs/handbook/2/objects.html)
+This project was created by @Romantech91
 
-* [Everyday types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)
+## Features
 
-* [More on functions](https://www.typescriptlang.org/docs/handbook/2/functions.html)
+- Create and manage cars, trucks, and motorbikes.
 
-## Grading Requirements
+- Perform various actions on vehicles, such as starting, accelerating, decelerating, stopping, turning, reversing, towing (for trucks), and doing a wheelie (for motorbikes).
 
-> **Note** If a Challenge assignment submission is marked as "0," it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+- Print detailed information about each vehicle.
 
-This Challenge is graded based on the following criteria:
+## Vehicle Classes
 
-### Deliverables: 20%
+### Vehicle
 
-* A walkthrough video that demonstrates the functionality of the Vehicle Builder.
+Base class for all vehicle types, including common properties and methods
 
-* Your GitHub repository containing your application code.
+#### Properties
 
-### Walkthrough Video: 27%
+      - vin: Vehicle indentification number
+      - color: Color of the vehicle
+      - make: Make of the vehicle
+      - model: Model of the vehicle
+      - year: Year of manufacture
+      - weight: Weight of the vehicle
+      - topSpeed: Top speed of the vehicle
 
-* The `README.md` file must include a link to the walkthrough video.
+#### Methods
 
-* The walkthrough video must demonstrate how a user would invoke the application from the command line.
+      - printDetails: Prints the details of the vehicle
+      - start: Starts the vehicle
+      - accelerate: Accelerates the vehicle by a specified amount
+      - decelerate: Decelerates the vehicle by a specified amount
+      - stop: Stops the vehicle
+      - turn: Turns the vehicle in the specified direction
+      - reverse: Reverses the vehicle
 
-* The walkthrough video must demonstrate how a user would enter responses to all of the prompts in the application.
+### Car
 
-* The walkthrough video must demonstrate all the prompts and functionality related to trucks and motorbikes working properly.
+No additional properties or methods
 
-### Technical Acceptance Criteria: 40%
+### Truck
 
-* Satisfies all of the preceding acceptance criteria plus the following:
+Additional property and method
 
-  * It uses the [Inquirer package](https://www.npmjs.com/package/inquirer).
+#### Properties
 
-  * The application must have properly implemented `Truck` and `Motorbike` classes:
+      - towingCapacity: The maximum weight the truck can tow
 
-    * The user should be able to choose between a car, a truck, or a motorbike when creating a vehicle.
+#### Methods
 
-    * The `Truck` and `Motorbike` classes must prompt the user for details that the `Car` class doesn't.
+      - tow: Tows the specified vehicle
 
-    * The `Truck` class must allow the user to implement an action that the `Car` and `Motorbike` classes cannot.
+### Motorbike
 
-### Repository Quality: 13%
+Additional property and method
 
-* Repository has a unique name.
+#### Properties
 
-* Repository follows best practices for file structure and naming conventions.
+      - wheels: An array of wheel objects representing the motorbike's wheels
 
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+#### Methods
 
-* Repository contains multiple descriptive commit messages.
+      - wheelie: Logs a message indicating the motorbike is doing a wheelie
 
-* Repository contains a high-quality readme with description and a link to a walkthrough video.
+## How to Contribute
 
-## Review
+If you would like to contribute to this project, please fork the repository and create a pull request with your changes.
 
-You are required to submit the following for review:
+## Tests
 
-* A walkthrough video that demonstrates the functionality of the application.
+Currently, there are no automated tests for this project. You can test the application manually by running the script and verifying the output.
 
-* The URL of the GitHub repository, with a unique name and a README describing the project.
+## License
 
----
-&copy; 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+MIT
+
+## Questions
+
+If you have any questions, please reach out to me at victor_roman1198@yahoo.com or visit my GitHub profile at @Romantech91.
