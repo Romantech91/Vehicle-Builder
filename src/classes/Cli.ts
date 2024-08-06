@@ -421,20 +421,21 @@ class Cli {
           } else {
             console.log("Selected vehicle is not a truck.");
           }
-        } else if (answers.action === 'Perform wheelie') {
-          const motorbike = this.vehicles.find(
+        } else if (answers.action === 'Wheelie') {
+          let motorbike: Motorbike | undefined;
+           motorbike = this.vehicles.find(
             (vehicle) =>
               vehicle.vin === this.selectedVehicleVin && vehicle instanceof Motorbike
-          );
-          if (motorbike instanceof Motorbike) {
-            const motorbike = this.vehicles.find((vehicle) => vehicle instanceof Motorbike);
+          ) as Motorbike;
+          //console.log(motorbike, "motorbike");
+          //if (motorbike instanceof Motorbike) {
+            //const motorbike = this.vehicles.find((vehicle) => vehicle instanceof Motorbike);
             if (motorbike) {
-              console.log(`Motorbike ${motorbike.make} ${motorbike.model} is doing a wheelie!`);
           motorbike.wheelie();
           } else {
             console.log("Selected vehicle is not a motorbike.");
           }
-        }
+        //}
         } if (answers.action === 'Select or create another vehicle') {
           this.startCli();
           return;
