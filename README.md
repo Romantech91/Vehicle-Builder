@@ -45,7 +45,7 @@ To run this CLI, follow these steps:
 
 ## Video walk through
 
-For a visual walk through on how to use the application, click on to watch the video.
+For a visual walk through on how to use the application, click on https://drive.google.com/file/d/1a1fdMSdQh3-HfUPeJPCGO3cKLb9ubrdk/view to watch the video.
 
 ## Credits
 
